@@ -1,0 +1,39 @@
+{
+  "name": "gatsby-transformer-ffmpeg",
+  "description": "Gatsby transformer plugin for video using FFMPEG",
+  "version": "0.3.0",
+  "author": "Michael Orenstein <mike@whiteshadows.me>",
+  "bugs": {
+    "url": "https://github.com/Mike-Dax/gatsby-transformer-ffmpeg/issues"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0",
+    "bluebird": "^3.5.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "babel-preset-gatsby-package": "^0.2.2",
+    "cross-env": "^5.1.4"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "video",
+    "ffmpeg"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "gatsby": "^2.0.33",
+    "gatsby-plugin-ffmpeg": "0.3.0"
+  },
+  "repository": "https://github.com/Mike-Dax/gatsby-transformer-ffmpeg",
+  "scripts": {
+    "build": "babel src --out-dir . --ignore **/__tests__",
+    "prepare": "cross-env NODE_ENV=production npm run build",
+    "watch": "babel -w src --out-dir . --ignore **/__tests__"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
