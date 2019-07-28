@@ -1,6 +1,8 @@
 const supportedExtensions = {
   mp4: true,
   avi: true,
+  mov: true,
+  mkv: true,
 }
 
 module.exports = async function onCreateNode({ node, actions, createNodeId }) {

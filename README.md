@@ -11,18 +11,15 @@ Creates `VideoFFMPEG` nodes from locally hosted video files.
 ```javascript
 // In your gatsby-config.js
 module.exports = {
-  plugins: [`gatsby-plugin-ffmpeg`, `gatsby-transformer-ffmpeg`]
-};
+  plugins: [`gatsby-plugin-ffmpeg`, `gatsby-transformer-ffmpeg`],
+}
 ```
 
 Please note that you must have a source plugin (which brings in images) installed in your project. Otherwise no `VideoFFMPEG` nodes can be created for your files. The recommended example would be [`gatsby-source-filesystem`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-filesystem).
 
 ## Parsing algorithm
 
-It recognizes files with the following extensions as images.
-
-- mp4
-- avi
+Currently it only detects files with the extensions `avi`, `mp4`, `mov`, `mkv`. If you have a different container and would like it added, open an issue or create a PR and I'm happy to include it.
 
 Each image file is parsed into a node of type `VideoFFMPEG`.
 
