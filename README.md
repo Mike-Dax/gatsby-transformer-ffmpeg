@@ -32,8 +32,7 @@ This query generates both webm and h264 mp4 files for every video file found.
   allVideoFfmpeg {
     edges {
       node {
-        id
-        webm: transcode(outputOptions: ["-crf 20", "-b:v 0"], maxWidth: 900, maxHeight: 480, fileExtension: "webm", codec: "libvpx-vp9") {
+        webm: transcode(codec: "libvpx-vp9", maxWidth: 900, maxHeight: 480, fileExtension: "webm", outputOptions: ["-crf 20", "-b:v 0"]) {
           width
           src
           presentationMaxWidth
@@ -42,7 +41,7 @@ This query generates both webm and h264 mp4 files for every video file found.
           height
           aspectRatio
         }
-        mp4: transcode(maxWidth: 900, maxHeight: 480, fileExtension: "mp4", codec: "libx264", options:[["-profile:v", "main"], ["-pix_fmt", "yuv420p"]]) {
+        mp4: transcode(codec: "libx264", maxWidth: 900, maxHeight: 480, fileExtension: "mp4", options:[["-profile:v", "main"], ["-pix_fmt", "yuv420p"]], outputOptions: ["-movflags faststart"]) {
           width
           src
           presentationMaxWidth
@@ -79,8 +78,7 @@ With a video file in `packages/resources/videofile.mp4` we will be able to grab 
 {
   file(relativePath: {eq: "videofile.mp4"}) {
     childVideoFfmpeg {
-      id
-      mp4: transcode(maxWidth: 900, maxHeight: 480, fileExtension: "mp4", codec: "libx264", options:[["-profile:v", "main"], ["-pix_fmt", "yuv420p"]]) {
+      mp4: transcode(maxWidth: 900, maxHeight: 480, fileExtension: "mp4", codec: "libx264", options:[["-profile:v", "main"], ["-pix_fmt", "yuv420p"]], outputOptions: ["-movflags faststart"]) {
         width
         src
         presentationMaxWidth
