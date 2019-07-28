@@ -1,7 +1,7 @@
 {
   "name": "gatsby-transformer-ffmpeg",
   "description": "Gatsby transformer plugin for video using FFMPEG",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "Michael Orenstein <mike@whiteshadows.me>",
   "bugs": {
     "url": "https://github.com/Mike-Dax/gatsby-transformer-ffmpeg/issues"
@@ -25,7 +25,7 @@
   "license": "MIT",
   "peerDependencies": {
     "gatsby": "^2.0.33",
-    "gatsby-plugin-ffmpeg": "0.3.0"
+    "gatsby-plugin-ffmpeg": "0.3.1"
   },
   "repository": "https://github.com/Mike-Dax/gatsby-transformer-ffmpeg",
   "scripts": {
