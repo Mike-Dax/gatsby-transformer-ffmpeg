@@ -32,6 +32,7 @@ const transcodeNode = ({
 
         src: { type: GraphQLString },
         originalName: { type: GraphQLString },
+        fileExtension: { type: GraphQLString },
       },
     }),
     args: {
@@ -96,12 +97,6 @@ const transcodeNode = ({
         pipelines: [pipeline],
       }
 
-      console.log('transformer resolving')
-      console.log(transcodeOptions)
-      console.log(video)
-      console.log(fieldArgs)
-      console.log(file)
-
       return Promise.resolve(
         transcode({
           file,
@@ -115,6 +110,7 @@ const transcodeNode = ({
           video,
           file,
           src: o.videos[0].src,
+          fileExtension,
         })
       )
     },
