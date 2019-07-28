@@ -11,7 +11,7 @@ Creates `VideoFFMPEG` nodes from locally hosted video files.
 ```javascript
 // In your gatsby-config.js
 module.exports = {
-  plugins: [`gatsby-plugin-ffmpeg`, `gatsby-transformer-ffmpeg`],
+  plugins: [`gatsby-transformer-ffmpeg`],
 }
 ```
 

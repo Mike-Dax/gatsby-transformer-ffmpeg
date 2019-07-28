@@ -52,6 +52,10 @@ const transcodeNode = ({
         type: GraphQLBoolean,
         defaultValue: false,
       },
+      options: {
+        type: new GraphQLList(new GraphQLList(GraphQLString)),
+        defaultValue: [],
+      },
       outputOptions: {
         type: new GraphQLList(GraphQLString),
         defaultValue: [],
@@ -71,6 +75,7 @@ const transcodeNode = ({
         audio,
         outputOptions,
         fileExtension,
+        options,
       } = fieldArgs
 
       /// turn args into transcodeOptions
@@ -82,6 +87,10 @@ const transcodeNode = ({
 
           if (!audio) {
             mutableChain = mutableChain.noAudio()
+          }
+
+          for (const option of options) {
+            mutableChain = mutableChain.addOption(option[0], option[1])
           }
 
           mutableChain = mutableChain.outputOptions(outputOptions)
