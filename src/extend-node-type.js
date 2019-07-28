@@ -48,9 +48,8 @@ const transcodeNode = ({
         type: GraphQLInt,
         defaultValue: 480,
       },
-      audio: {
-        type: GraphQLBoolean,
-        defaultValue: false,
+      audioCodec: {
+        type: GraphQLString,
       },
       options: {
         type: new GraphQLList(new GraphQLList(GraphQLString)),
@@ -72,7 +71,7 @@ const transcodeNode = ({
         codec,
         maxWidth,
         maxHeight,
-        audio,
+        audioCodec,
         outputOptions,
         fileExtension,
         options,
@@ -85,8 +84,10 @@ const transcodeNode = ({
         transcode: chain => {
           let mutableChain = chain.videoCodec(codec)
 
-          if (!audio) {
+          if (!audioCodec) {
             mutableChain = mutableChain.noAudio()
+          } else {
+            mutableChain = mutableChain.withAudioCodec(audio)
           }
 
           for (const option of options) {
