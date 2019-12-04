@@ -87,7 +87,7 @@ const transcodeNode = ({
           if (!audioCodec) {
             mutableChain = mutableChain.noAudio()
           } else {
-            mutableChain = mutableChain.withAudioCodec(audio)
+            mutableChain = mutableChain.withAudioCodec(audioCodec)
           }
 
           for (const option of options) {
