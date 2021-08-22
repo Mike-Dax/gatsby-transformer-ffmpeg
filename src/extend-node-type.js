@@ -1,4 +1,3 @@
-const Promise = require(`bluebird`)
 const {
   GraphQLObjectType,
   GraphQLList,
@@ -81,7 +80,7 @@ const transcodeNode = ({
 
       const pipeline = {
         name: 'graphql-pipeline',
-        transcode: chain => {
+        transcode: (chain) => {
           let mutableChain = chain.videoCodec(codec)
 
           if (!audioCodec) {
@@ -107,14 +106,12 @@ const transcodeNode = ({
         pipelines: [pipeline],
       }
 
-      return Promise.resolve(
-        transcode({
-          file,
-          options: transcodeOptions,
-          reporter,
-          //  cache,
-        })
-      ).then(o =>
+      return transcode({
+        file,
+        options: transcodeOptions,
+        reporter,
+        //  cache,
+      }).then((o) =>
         Object.assign({}, o, {
           fieldArgs: args,
           video,

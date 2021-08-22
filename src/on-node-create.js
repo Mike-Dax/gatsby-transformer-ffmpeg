@@ -12,7 +12,7 @@ module.exports = async function onCreateNode({ node, actions, createNodeId }) {
     return
   }
 
-  const imageNode = {
+  const videoNode = {
     id: createNodeId(`${node.id} >> VideoFFMPEG`),
     children: [],
     parent: node.id,
@@ -22,8 +22,8 @@ module.exports = async function onCreateNode({ node, actions, createNodeId }) {
     },
   }
 
-  createNode(imageNode)
-  createParentChildLink({ parent: node, child: imageNode })
+  createNode(videoNode)
+  createParentChildLink({ parent: node, child: videoNode })
 
   return
 }
