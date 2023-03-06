@@ -91,3 +91,25 @@ With a video file in `packages/resources/videofile.mp4` we will be able to grab 
   }
 }
 ```
+
+## Audio
+
+Make sure an audio codec is specified in query parameters to preserve video audio, for example:
+
+```
+{
+  file(relativePath: {eq: "videofile.mp4"}) {
+    childVideoFfmpeg {
+      mp4: transcode(maxWidth: 900, maxHeight: 480, fileExtension: "mp4", codec: "libx264", audioCodec: "libmp3lame") {
+        width
+        src
+        presentationMaxWidth
+        presentationMaxHeight
+        originalName
+        height
+        aspectRatio
+      }
+    }
+  }
+}
+```
