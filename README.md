@@ -91,3 +91,18 @@ With a video file in `packages/resources/videofile.mp4` we will be able to grab 
   }
 }
 ```
+
+## Funding
+
+<p align="center">
+<a href="https://electricui.com/">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://electricui.com/web_static/monochrome-logotype.svg">
+  <img alt="Electric UI" src="https://electricui.com/web_static/logotype.svg" width="500">
+</picture>
+</a>
+</p>
+
+---
+
+Work on `gatsby-plugin-ffmpeg` is funded by [Electric UI](https://electricui.com). If you need to design an [Arduino GUI](https://electricui.com/hello/arduino), want [visualisations for a complex robotics system](https://electricui.com/features) or generally need a [user interface for your hardware project](https://electricui.com/features), please take a look at the website.
